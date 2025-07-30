@@ -21,13 +21,13 @@ export default function ContactPage() {
           <Card className="card-glass mt-12 shadow-xl overflow-hidden">
             <div className="h-[400px] md:h-[500px] w-full">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3609.91338634848!2d55.27078281500907!3d25.20484938390059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43348a67e24b%3A0x45206f47f70706b8!2sDubai!5e0!3m2!1sen!2sae!4v1628084534778!5m2!1sen!2sae"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3604.281861784964!2d55.4802874150141!3d25.39535998379963!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f58c734b4c275%3A0x40c4974913838531!2sCAPITAL%20MIDDLE%20EAST!5e0!3m2!1sen!2sae!4v1719483664333!5m2!1sen!2sae"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
                 allowFullScreen={true}
                 loading="lazy"
-                title="Google Map of Dubai"
+                title="Google Map of CAPITAL MIDDLE EAST"
               ></iframe>
             </div>
           </Card>
