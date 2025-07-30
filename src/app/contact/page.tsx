@@ -2,7 +2,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import ScrollReveal from "@/components/scroll-reveal";
 import RequestQuoteForm from "@/components/request-quote-form";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin } from "lucide-react";
 
 export default function ContactPage() {
   return (
@@ -61,12 +61,43 @@ export default function ContactPage() {
                 </Card>
             </ScrollReveal>
             <ScrollReveal delay={400}>
-                <Card className="card-glass p-8 shadow-xl h-full">
-                    <h2 className="text-3xl font-bold text-primary mb-6">Send a Message</h2>
-                    <RequestQuoteForm />
-                </Card>
+                 <Card className="card-glass p-8 shadow-xl h-full">
+                     <h2 className="text-3xl font-bold text-primary mb-6">Follow Us</h2>
+                     <p className="text-foreground/80 mb-6">Connect with us on social media for the latest updates, projects, and insights.</p>
+                     <div className="flex space-x-6">
+                        <a href="#" className="text-primary hover:text-accent transition-colors" aria-label="Facebook">
+                            <Facebook className="h-8 w-8"/>
+                        </a>
+                        <a href="#" className="text-primary hover:text-accent transition-colors" aria-label="Twitter">
+                            <Twitter className="h-8 w-8"/>
+                        </a>
+                        <a href="#" className="text-primary hover:text-accent transition-colors" aria-label="LinkedIn">
+                            <Linkedin className="h-8 w-8"/>
+                        </a>
+                     </div>
+                 </Card>
             </ScrollReveal>
         </div>
+        
+        <section id="request-quote" className="py-20">
+          <div className="container mx-auto px-4">
+            <ScrollReveal>
+              <h2 className="text-4xl md:text-5xl font-bold text-primary text-center">
+                Request a Quote
+              </h2>
+              <p className="mt-4 max-w-3xl mx-auto text-center text-lg text-foreground/70">
+                Let's build something great together. Reach out to us for a personalized quote for your project.
+              </p>
+            </ScrollReveal>
+            <ScrollReveal className="mt-12 max-w-2xl mx-auto">
+              <Card className="card-glass p-8 rounded-xl shadow-xl">
+                <CardContent className="p-0">
+                  <RequestQuoteForm />
+                </CardContent>
+              </Card>
+            </ScrollReveal>
+          </div>
+      </section>
 
       </div>
     </div>
