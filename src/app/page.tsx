@@ -148,11 +148,6 @@ export default function Home() {
           <p className="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-white/80 drop-shadow-md">
             Capital Middle East L.L.C is your trusted partner for premier industrial and corporate solutions in the heart of the UAE.
           </p>
-          <a href="#request-quote">
-            <Button size="lg" className="mt-8 btn-neumorphic text-lg py-7 px-10">
-              Get Started
-            </Button>
-          </a>
         </div>
       </section>
 
