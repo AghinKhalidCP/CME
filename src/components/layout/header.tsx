@@ -14,7 +14,6 @@ const navLinks = [
   { href: '/services', label: 'Our Services' },
   { href: '/projects', label: 'Projects' },
   { href: '/contact', label: 'Contact Us' },
-  { href: '/#request-quote', label: 'Request Quote' },
 ];
 
 export default function Header() {
@@ -41,15 +40,17 @@ export default function Header() {
       )}
     >
       <div className="container mx-auto flex h-20 items-center justify-between px-4">
-        <Link href="/" className="flex items-center gap-2">
-          <Building className="h-8 w-8 text-primary" />
-          <span className="text-xl font-bold text-primary tracking-tight">
-            CAPITAL MIDDLE EAST
-          </span>
-        </Link>
+        <div className="flex-1 lg:flex-none">
+          <Link href="/" className="flex items-center gap-2">
+            <Building className="h-8 w-8 text-primary" />
+            <span className="text-xl font-bold text-primary tracking-tight">
+              CAPITAL MIDDLE EAST
+            </span>
+          </Link>
+        </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex flex-1 items-center justify-end">
+        <div className="hidden lg:flex flex-1 items-center justify-center">
           <nav className="flex items-center gap-1">
             {navLinks.map((link) => (
               <Link key={link.href} href={link.href} legacyBehavior>
@@ -59,6 +60,12 @@ export default function Header() {
               </Link>
             ))}
           </nav>
+        </div>
+
+        <div className="hidden lg:flex flex-1 items-center justify-end">
+          <Button asChild>
+            <Link href="/#request-quote">Request Quote</Link>
+          </Button>
         </div>
 
         {/* Mobile Navigation */}
@@ -79,7 +86,7 @@ export default function Header() {
                   </Link>
                 </div>
                 <nav className="flex flex-col p-4 space-y-2">
-                  {navLinks.map((link) => (
+                  {[...navLinks, { href: '/#request-quote', label: 'Request Quote' }].map((link) => (
                     <Link key={link.href} href={link.href} legacyBehavior>
                        <a className="block px-4 py-3 text-lg font-medium text-primary/80 transition-colors hover:bg-secondary rounded-md" onClick={closeMobileMenu}>
                         {link.label}
