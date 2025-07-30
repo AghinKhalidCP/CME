@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Building, Phone, Mail, MapPin, Facebook, Twitter, Linkedin } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook, Twitter, Linkedin } from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -7,11 +8,14 @@ export default function Footer() {
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-4">
-            <Link href="/" className="flex items-center gap-2">
-              <Building className="h-8 w-8" />
-              <span className="text-xl font-bold tracking-tight">
-                CAPITAL MIDDLE EAST
-              </span>
+            <Link href="/">
+              <Image
+                src="/logo.png"
+                alt="Capital Middle East L.L.C"
+                width={200}
+                height={50}
+                className="h-auto filter brightness-0 invert"
+              />
             </Link>
             <p className="text-primary-foreground/70">
               Your trusted partner for premier industrial and corporate solutions in the heart of the UAE.

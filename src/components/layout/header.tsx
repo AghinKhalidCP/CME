@@ -3,11 +3,12 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X, Building } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 import { usePathname } from 'next/navigation';
+import Image from 'next/image';
 
 const navLinks = [
   { href: '/about', label: 'About Us' },
@@ -40,12 +41,15 @@ export default function Header() {
       )}
     >
       <div className="container mx-auto flex h-20 items-center justify-between px-4">
-        <div className="flex-1 lg:flex-none">
-          <Link href="/" className="flex items-center gap-2">
-            <Building className="h-8 w-8 text-primary" />
-            <span className="text-xl font-bold text-primary tracking-tight">
-              CAPITAL MIDDLE EAST
-            </span>
+        <div className="flex-shrink-0">
+          <Link href="/">
+            <Image
+              src="/logo.png"
+              alt="Capital Middle East L.L.C"
+              width={200}
+              height={50}
+              className="h-auto"
+            />
           </Link>
         </div>
 
@@ -62,7 +66,7 @@ export default function Header() {
           </nav>
         </div>
 
-        <div className="hidden lg:flex flex-1 items-center justify-end">
+        <div className="hidden lg:flex flex-shrink-0 items-center justify-end">
           <Button asChild>
             <Link href="/#request-quote">Request Quote</Link>
           </Button>
@@ -80,13 +84,18 @@ export default function Header() {
             <SheetContent side="right" className="w-[300px] bg-background p-0">
               <div className="flex h-full flex-col">
                 <div className="flex items-center justify-between p-4 border-b">
-                   <Link href="/" className="flex items-center gap-2" onClick={closeMobileMenu}>
-                    <Building className="h-8 w-8 text-primary" />
-                    <span className="text-lg font-bold text-primary tracking-tight">CME</span>
+                   <Link href="/" onClick={closeMobileMenu}>
+                      <Image
+                        src="/logo.png"
+                        alt="Capital Middle East L.L.C"
+                        width={150}
+                        height={37.5}
+                        className="h-auto"
+                      />
                   </Link>
                 </div>
                 <nav className="flex flex-col p-4 space-y-2">
-                  {[...navLinks, { href: '/#request-quote', label: 'Request Quote' }].map((link) => (
+                  {navLinks.map((link) => (
                     <Link key={link.href} href={link.href} legacyBehavior>
                        <a className="block px-4 py-3 text-lg font-medium text-primary/80 transition-colors hover:bg-secondary rounded-md" onClick={closeMobileMenu}>
                         {link.label}
@@ -94,6 +103,11 @@ export default function Header() {
                     </Link>
                   ))}
                 </nav>
+                 <div className="mt-auto p-4 border-t">
+                    <Button asChild className="w-full">
+                        <Link href="/#request-quote" onClick={closeMobileMenu}>Request Quote</Link>
+                    </Button>
+                </div>
               </div>
             </SheetContent>
           </Sheet>
