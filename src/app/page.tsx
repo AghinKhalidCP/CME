@@ -130,15 +130,18 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       <section className="relative h-screen w-full flex items-center justify-center text-center text-white overflow-hidden">
-        <div className="absolute inset-0 bg-primary/80 z-10" />
+        {/* Background image */}
         <Image
-          src="https://placehold.co/1920x1080"
+          src="/industrial-background.png"
           alt="Industrial background"
           data-ai-hint="industrial background"
-          layout="fill"
-          objectFit="cover"
-          className="bg-primary"
+          fill
+          className="absolute inset-0 w-full h-full object-cover z-0"
+          priority
         />
+        {/* Blue gradient overlay */}
+        <div className="absolute inset-0 bg-primary/80 z-10" />
+        {/* Text content */}
         <div className="z-20 p-4">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white drop-shadow-lg">
             Engineering Excellence.
