@@ -49,15 +49,17 @@ export default function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-1">
-          {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} legacyBehavior>
-              <a className="px-3 py-2 text-sm font-medium text-primary/80 transition-colors hover:text-primary rounded-md">
-                {link.label}
-              </a>
-            </Link>
-          ))}
-        </nav>
+        <div className="hidden lg:flex flex-1 items-center justify-end">
+          <nav className="flex items-center gap-1">
+            {navLinks.map((link) => (
+              <Link key={link.href} href={link.href} legacyBehavior>
+                <a className="px-3 py-2 text-sm font-medium text-primary/80 transition-colors hover:text-primary rounded-md">
+                  {link.label}
+                </a>
+              </Link>
+            ))}
+          </nav>
+        </div>
 
         {/* Mobile Navigation */}
         <div className="lg:hidden">
