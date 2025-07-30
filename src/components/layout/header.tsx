@@ -75,12 +75,6 @@ export default function Header() {
                     <Building className="h-8 w-8 text-primary" />
                     <span className="text-lg font-bold text-primary tracking-tight">CME</span>
                   </Link>
-                  <SheetTrigger asChild>
-                    <Button variant="ghost" size="icon">
-                      <X className="h-6 w-6 text-primary" />
-                      <span className="sr-only">Close menu</span>
-                    </Button>
-                  </SheetTrigger>
                 </div>
                 <nav className="flex flex-col p-4 space-y-2">
                   {navLinks.map((link) => (
