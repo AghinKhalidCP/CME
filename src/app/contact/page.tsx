@@ -20,15 +20,7 @@ export default function ContactPage() {
         <ScrollReveal delay={200}>
           <Card className="card-glass mt-12 shadow-xl overflow-hidden">
             <div className="h-[400px] md:h-[500px] w-full">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3604.281861784964!2d55.4802874150141!3d25.39535998379963!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f58c734b4c275%3A0x40c4974913838531!2sCAPITAL%20MIDDLE%20EAST!5e0!3m2!1sen!2sae!4v1719483664333!5m2!1sen!2sae"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen={true}
-                loading="lazy"
-                title="Google Map of CAPITAL MIDDLE EAST"
-              ></iframe>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1802.468306413192!2d55.476063964915554!3d25.373440805104607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5889b63c1a43%3A0x5f80937d1d3b3c31!2sCapital%20Middle%20East%20LLC!5e0!3m2!1sen!2sin!4v1753876352577!5m2!1sen!2sin" width="100%" height="100%" style={{border:0}} allowFullScreen={true} loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
           </Card>
         </ScrollReveal>
