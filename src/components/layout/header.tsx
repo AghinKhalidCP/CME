@@ -7,27 +7,27 @@ import { Menu, X, Building } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
+import { usePathname } from 'next/navigation';
 
 const navLinks = [
   { href: '/about', label: 'About Us' },
-  { href: '/projects', label: 'Projects Executed' },
-  { href: '/health-safety', label: 'Health & Safety' },
-  { href: '/quality-manual', label: 'Quality Manual' },
-  { href: '/#services', label: 'Our Services' },
-  { href: '/#gallery', label: 'Photo Gallery' },
+  { href: '/services', label: 'Our Services' },
+  { href: '/projects', label: 'Projects' },
+  { href: '/contact', label: 'Contact Us' },
   { href: '/#request-quote', label: 'Request Quote' },
-  { href: '/#contact', label: 'Contact Us' },
 ];
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
     window.addEventListener('scroll', handleScroll);
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -36,8 +36,8 @@ export default function Header() {
   return (
     <header
       className={cn(
-        'sticky top-0 z-50 w-full transition-all duration-300',
-        isScrolled ? 'bg-background/80 shadow-md backdrop-blur-lg' : 'bg-transparent'
+        'fixed top-0 z-50 w-full transition-all duration-300',
+        isScrolled || pathname !== '/' ? 'bg-background/80 shadow-md backdrop-blur-lg' : 'bg-transparent'
       )}
     >
       <div className="container mx-auto flex h-20 items-center justify-between px-4">
