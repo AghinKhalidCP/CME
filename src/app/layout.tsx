@@ -29,7 +29,7 @@ export default function RootLayout({
       </head>
       <body className="font-body bg-background text-foreground/80 antialiased">
         <Header />
-        <main className="min-h-screen pt-20">
+        <main className="min-h-screen">
           <PageWrapper>
             {children}
           </PageWrapper>
