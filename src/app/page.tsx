@@ -140,17 +140,47 @@ export default function Home() {
           priority
         />
         {/* Blue gradient overlay */}
-        <div className="absolute inset-0 bg-primary/30 z-10" />
+        <div className="absolute inset-0 bg-primary-gradient z-10" style={{
+          opacity: 0.8
+
+        }} />
         {/* Text content */}
-        <div className="z-20 p-4">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white drop-shadow-lg">
-            Engineering Excellence.
+        <div className="z-20 p-4 flex flex-col items-center">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl tracking-tight text-white drop-shadow-lg">
+            Industrial Excellence
             <br />
-            Building The Future.
+            <span style={{ color: "#64d2f8" }}>
+              Redefined
+            </span>
           </h1>
           <p className="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-white/80 drop-shadow-md">
             Capital Middle East L.L.C is your trusted partner for premier industrial and corporate solutions in the heart of the UAE.
           </p>
+          {/* Call to Action Button */}
+          <Button
+            asChild
+            className="mt-8 px-8 py-4 text-lg rounded-full bg-gradient-to-b from-gray-100 to-gray-300 text-gray-900 shadow-[0_0_120px_25px_rgba(255,255,255,0.4)] transition-transform hover:scale-105"
+          >
+            <a href="#services">Explore Our Services</a>
+          </Button>
+
+          {/* Downward Blinking Button */}
+          <a
+            href="#services"
+            className="mt-12 flex flex-col items-center animate-bounce"
+            aria-label="Scroll Down"
+          >
+
+            <svg
+              className="w-8 h-8 text-white"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </a>
         </div>
       </section>
 
@@ -268,7 +298,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-24 bg-primary text-white">
+      <section className="py-24 bg-primary-gradient text-white"> {/* <-- changed */}
         <div className="container mx-auto px-4 text-center">
           <ScrollReveal>
             <Award className="h-16 w-16 mx-auto text-accent" />

@@ -69,7 +69,7 @@ export default function Header() {
 							<Link key={link.href} href={link.href} legacyBehavior>
 								<a
 									className={cn(
-										'px-3 py-2 text-sm font-medium transition-colors rounded-md',
+										'px-3 py-2 text-sm font-medium transition-colors rounded-md drop-shadow', // <-- Added drop-shadow
 										isHero
 											? 'text-white hover:text-primary'
 											: 'text-primary/80 hover:text-primary'
