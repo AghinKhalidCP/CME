@@ -140,7 +140,7 @@ export default function Home() {
           priority
         />
         {/* Blue gradient overlay */}
-        <div className="absolute inset-0 bg-primary/80 z-10" />
+        <div className="absolute inset-0 bg-primary/30 z-10" />
         {/* Text content */}
         <div className="z-20 p-4">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white drop-shadow-lg">
@@ -186,21 +186,29 @@ export default function Home() {
             </p>
           </ScrollReveal>
           <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <ScrollReveal key={index} className="flex">
-                <Card className="card-glass flex flex-col w-full p-6 text-center items-center rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                  <div className="bg-primary/10 p-4 rounded-full mb-4">
-                    {service.icon}
-                  </div>
-                  <h3 className="text-2xl font-semibold text-primary mt-2">
-                    {service.title}
-                  </h3>
-                  <p className="mt-2 text-foreground/70 flex-grow">
-                    {service.description}
-                  </p>
-                </Card>
-              </ScrollReveal>
-            ))}
+            {services.map((service, index) => {
+              // Center last card if odd number of services
+              const isLast = index === services.length - 1;
+              const isOdd = services.length % 3 === 1;
+              return (
+                <ScrollReveal
+                  key={index}
+                  className={`flex ${isLast && isOdd ? "lg:col-start-2" : ""}`}
+                >
+                  <Card className="card-glass flex flex-col w-full p-6 text-center items-center rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <div className="bg-primary/10 p-4 rounded-full mb-4">
+                      {service.icon}
+                    </div>
+                    <h3 className="text-2xl font-semibold text-primary mt-2">
+                      {service.title}
+                    </h3>
+                    <p className="mt-2 text-foreground/70 flex-grow">
+                      {service.description}
+                    </p>
+                  </Card>
+                </ScrollReveal>
+              );
+            })}
           </div>
         </div>
       </section>

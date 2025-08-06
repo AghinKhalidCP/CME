@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -11,6 +10,7 @@ import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 
 const navLinks = [
+  { href: '/', label: 'Home' }, // <-- Added Home link
   { href: '/about', label: 'About Us' },
   { href: '/services', label: 'Our Services' },
   { href: '/projects', label: 'Projects' },
