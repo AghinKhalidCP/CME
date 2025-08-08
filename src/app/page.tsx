@@ -129,7 +129,7 @@ const faqs = [
 export default function Home() {
   return (
     <div className="flex flex-col">
-      <section className="relative h-screen w-full flex items-center justify-center text-center text-white overflow-hidden">
+      <section className="relative h-screen w-full flex flex-col justify-between text-center text-white overflow-hidden">
         {/* Background image */}
         <Image
           src="/industrial-background.png"
@@ -140,12 +140,9 @@ export default function Home() {
           priority
         />
         {/* Blue gradient overlay */}
-        <div className="absolute inset-0 bg-primary-gradient z-10" style={{
-          opacity: 0.8
-
-        }} />
-        {/* Text content */}
-        <div className="z-20 p-4 flex flex-col items-center">
+        <div className="absolute inset-0 bg-primary-gradient z-10" style={{ opacity: 0.8 }} />
+        {/* Centered text content */}
+        <div className="z-20 flex flex-col items-center justify-center flex-1">
           <h1 className="text-4xl md:text-6xl lg:text-7xl tracking-tight text-white drop-shadow-lg">
             Industrial Excellence
             <br />
@@ -156,21 +153,20 @@ export default function Home() {
           <p className="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-white/80 drop-shadow-md">
             Capital Middle East L.L.C is your trusted partner for premier industrial and corporate solutions in the heart of the UAE.
           </p>
-          {/* Call to Action Button */}
+        </div>
+        {/* Bottom-aligned buttons */}
+        <div className="z-20 flex flex-col items-center pb-16">
           <Button
             asChild
-            className="mt-8 px-8 py-4 text-lg rounded-full bg-gradient-to-b from-gray-100 to-gray-300 text-gray-900 shadow-[0_0_120px_25px_rgba(255,255,255,0.4)] transition-transform hover:scale-105"
+            className="px-8 py-4 text-lg rounded-full bg-gradient-to-b from-gray-100 to-gray-300 text-gray-900 shadow-[0_0_120px_25px_rgba(255,255,255,0.4)] transition-transform hover:scale-105"
           >
             <a href="#services">Explore Our Services</a>
           </Button>
-
-          {/* Downward Blinking Button */}
           <a
             href="#services"
             className="mt-12 flex flex-col items-center animate-bounce"
             aria-label="Scroll Down"
           >
-
             <svg
               className="w-8 h-8 text-white"
               fill="none"
@@ -236,6 +232,7 @@ export default function Home() {
                       {service.description}
                     </p>
                   </Card>
+                  
                 </ScrollReveal>
               );
             })}
